@@ -17,8 +17,6 @@ export function AddLists(props) {
     };
     props.setmockList(()=>[...props.mockList, updateMockList]);
     console.log(props.mockList);
-    //setPage('lists');
-    
   };
   const navigate = useNavigate();
   return (

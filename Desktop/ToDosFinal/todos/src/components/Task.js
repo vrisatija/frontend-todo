@@ -54,7 +54,6 @@ export function Task(props) {
      props.setmockList([...updatedMockList]);
     
     navigate(`/viewTasks/${listId}`)
-    //setPage('tasks');
   };
   return (
     <div>

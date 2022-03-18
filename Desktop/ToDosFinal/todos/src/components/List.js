@@ -4,11 +4,9 @@ import { useNavigate, useParams } from 'react-router-dom';
 export function List(props) {
     const navigate=useNavigate();
     const { listId } = useParams();
-    //const [ selectedTask, setSelectedTask] = useState();
+    
   const addTask = () => {
-   // setPage('task2');
    navigate(`/addTasks/${listId}/0`)
-    //setSelectedTask('');
   };
   const onEdit = (eachTask) => {
     console.log(eachTask);

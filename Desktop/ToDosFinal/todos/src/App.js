@@ -44,54 +44,8 @@ function App() {
     },
   ];
   const [mockList, setmockList] = useState((mockListTemp));
-  const [page, setPage] = useState('lists');
-  const onAdd = () => {
-    setPage('addList');
-  };
-  const onSave = (list) => {
-    console.log(list);
-    const updateMockList = {
-      id: mockList.length + 1,
-      list,
-      tasks: [],
-    };
-    setmockList([...mockList, updateMockList]);
-    console.log(mockList);
-    setPage('lists');
-  };
-  const viewTasks = (eachList) => {
-    setPage('tasks');
-    setmockList(eachList);
-  };
-  // const [listData, setListData]=useState((mockList))
-  const [selectedTask, setSelectedTask] = useState();
+  
 
-  const onEdit = (eachTask) => {
-    console.log(eachTask);
-    setPage('task');
-    setSelectedTask(eachTask);
-  };
-  const onAddList = () => {
-    setPage('task2');
-    setSelectedTask('');
-  };
-  const onSaveTasks = (taskItem) => {
-    console.log(taskItem.title);
-    let f = 0;
-    const updateMockList = {
-      name: mockList.name,
-      tasks: mockList.tasks.map((eachTask, index) => {
-        if (eachTask.id === taskItem.id) {
-          f = 1;
-          return taskItem;
-        }
-        return eachTask;
-      }),
-    };
-    if (f === 0) { updateMockList.tasks.push(taskItem); }
-    setmockList(updateMockList);
-    setPage('tasks');
-  };
   return (
     <div className="App">
       {/* {page === 'lists' ? <Lists mockList={mockList} onAdd={onAdd} viewTasks={viewTasks} />
